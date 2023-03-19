@@ -61,7 +61,7 @@ ul#results-container li {
     <script src="{{ search.url }}"></script>
 
     <script>
-      window.simpleJekyllSearch = new SimpleJekyllSearch({
+      SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
         json: '{{ search.json }}',
