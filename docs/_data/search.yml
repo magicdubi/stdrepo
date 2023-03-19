@@ -1,0 +1,4 @@
+vortex:
+      url       : "https://magicdubi.github.io/stdrepo/scripts/simple-jekyll-search.min.js"
+      json      : "https://magicdubi.github.io/stdrepo/vortex/searchVortex.json"
+      template  : '<li><a href="//wiki.pokemon-vortex.com/wiki/{name}" target="_blank" rel="noopener noreferrer">{id} {name}</a></li>' 
