@@ -1,3 +1,13 @@
+---
+permalink: /search/vortex/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+<body>
+    {% include header.html %}
+
 <!-- start search code -->
 <style>
 ul#results-container {
@@ -31,10 +41,39 @@ ul#results-container li {
 }
 </style>
 
+<div class="page-content">
+<div class="wrapper">
+
 <div id="search-container">
   <div id="input-container">
     <input type="search" id="search-input" name="search-input" placeholder="search...">
   </div>
   <ul id="results-container"></ul>
 </div>
+
+</div>
+</div>
+
+{% assign search = site.data.search[vortex] %}
+<!--
+<script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+-->
+    <script src="{{ search.url }}"></script>
+
+    <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ search.json }}',
+        searchResultTemplate: '{{ search.template }}',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
 <!-- end search code -->
+
+    {% include footer.html %}
+</body>
+</html>
