@@ -2,11 +2,6 @@
 layout: none
 ---
 
-{% assign script = "{{ site.baseurl }}/scripts/search.min.js" %}
-{% assign json = "{{ site.baseurl }}/vortex/searchVortex.json" %}
-{% assign template = "<li>{id} {name}</li>" %}
----
-
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -69,6 +64,10 @@ layout: none
   </footer>
   
   </div>
+
+{% assign script = "{{ site.baseurl }}/scripts/search.min.js" %}
+{% assign json = "{{ site.baseurl }}/vortex/searchVortex.json" %}
+{% assign template = "<li>{id} {name}</li>" %}
 
   <script src="{{ script }}></script>
 
