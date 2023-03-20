@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
-<body>
-    {% include header.html %}
+---
+layout: default2
+---
+
+
 
 <!-- start search code -->
 <style>
@@ -37,8 +37,6 @@ ul#results-container li {
 }
 </style>
 
-<div class="page-content">
-<div class="wrapper">
 
 <div id="search-container">
   <div id="input-container">
@@ -47,8 +45,7 @@ ul#results-container li {
   <ul id="results-container"></ul>
 </div>
 
-</div>
-</div>
+
 
 {% assign search = site.data.search[vortex] %}
 <!--
@@ -69,7 +66,3 @@ ul#results-container li {
       })
     </script>
 <!-- end search code -->
-
-    {% include footer.html %}
-</body>
-</html>
