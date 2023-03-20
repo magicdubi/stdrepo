@@ -1,8 +1,10 @@
 ---
 layout: none
-script: "{{ site.baseurl }}/scripts/search.min.js"
-json: "{{ site.baseurl }}/vortex/searchVortex.json"
-template: "<li>{id} {name}</li>"
+---
+
+{% assign script = "{{ site.baseurl }}/scripts/search.min.js" %}
+{% assign json = "{{ site.baseurl }}/vortex/searchVortex.json" %}
+{% assign template = "<li>{id} {name}</li>" %}
 ---
 
 <!DOCTYPE html>
@@ -30,11 +32,11 @@ template: "<li>{id} {name}</li>"
   <div class="w3-display-container" style="height:60px;">
 
   <div class="w3-display-left w3-margin-left">
-    <img src="bs1/thedealer.png" class="w3-circle w3-border w3-border-red w3-left" style="width:48px" alt="theDealer">
+    <img src="https://wonderpaper.github.io/assets/thedealer.png" class="w3-circle w3-border w3-border-red w3-left" style="width:48px" alt="theDealer">
   </div>
 
   <div class="w3-display-right w3-margin-right">
-    <img src="bs1/pokedaibo.png" class="w3-circle w3-border w3-border-black w3-left" style="width:48px" alt="pokedaibo">
+    <img src="https://wonderpaper.github.io/assets/pokedaibo.png" class="w3-circle w3-border w3-border-black w3-left" style="width:48px" alt="pokedaibo">
   </div>
 
   <div class="w3-display-middle">
@@ -46,7 +48,7 @@ template: "<li>{id} {name}</li>"
 
   <div class="w3-container">
   <div class="w3-panel w3-pale-yellow w3-leftbar w3-border w3-border-yellow" style="padding:2px 5px;vertical-align: baseline">
-    This icon will open the wiki link: <img src="bs1/exip1.png" class="x"/>
+    This icon will open the wiki link: <img src="https://wonderpaper.github.io/assets/exip1.png" class="x"/>
   </div>
   </div>
 
@@ -68,14 +70,14 @@ template: "<li>{id} {name}</li>"
   
   </div>
 
-  <script src="{{ page.script }}></script>
+  <script src="{{ script }}></script>
 
   <script>
     window.simpleJekyllSearch = new SimpleJekyllSearch({ 
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
-      json: '{{ page.json }}',
-      searchResultTemplate: '{{ page.template }}',
+      json: '{{ json }}',
+      searchResultTemplate: '{{ template }}',
       noResultsText: 'No results found',
       limit: 10,
       fuzzy: false
