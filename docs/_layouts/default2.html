@@ -4,10 +4,45 @@
   {% include head.html %}
 
   <body>
-
+<style>
+ul#results-container {
+    list-style-type: none;
+    border-left: solid 5px green;
+    border-top: solid 1px green;
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+}
+ul#results-container li {
+    margin: 6px 0;
+}
+#search-container {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+#input-container {
+    border-radius: 0 60px;
+    padding: 20px;
+    height: 60px;
+    background: linear-gradient(to right,#92f7fc,#68de74,#68de74);
+}
+#input-container input[type=search] {
+    width: 100%;
+    padding: 6px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 4px;
+}
+</style>
     {% include header.html %}
 
-    
+    <div id="search-container">
+  <div id="input-container">
+    <input type="search" id="search-input" name="search-input" placeholder="search...">
+  </div>
+  <ul id="results-container"></ul>
+</div>
 
     <div class="page-content">
       <div class="wrapper">
@@ -18,11 +53,43 @@
 
     {% include footer.html %}
 
+<!-- start search code -->
 
-
-
-
-    
+{% assign search = site.data.search[vortex] %}
+<!--
+<script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+-->
+    <script src="{{ search.url }}"></script>
+<!--
+    <script>
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ search.json }}',
+        searchResultTemplate: '{{ search.template }}',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+-->
+<!-- end search code -->
+<!--
+<script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+-->
+    <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ search.json }}',
+        searchResultTemplate: '{{ search.template }}',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
   </body>
 
 </html>
