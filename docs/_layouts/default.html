@@ -24,15 +24,17 @@
 
 
 
-
+<!--
     <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+ -->
+   <script src="{{ site.baseurl }}/scripts/simple-jekyll-search.min.js"></script>
 
     <script>
       window.simpleJekyllSearch = new SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+        json: '{{ site.baseurl }}/vortex/searchVortex.json',
+        searchResultTemplate: '<li>{id} {name} </li>',
         noResultsText: 'No results found',
         limit: 10,
         fuzzy: false,
